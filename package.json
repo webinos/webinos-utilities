@@ -9,6 +9,6 @@
     }
   ]
 , "dependencies":{
-    "find-dependencies": "~0.0.2",
+    "find-dependencies": "~0.0.2"
   }
 }

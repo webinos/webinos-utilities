@@ -2,8 +2,6 @@
 , "description": "A set of utilities files used by webinos pzh and pzp"
 , "version": "0.0.1"
 , "main": "index.js"
-, "maintainers": [{ "Habib Virji"}]
-, "contributors": [{ "Habib Virji"}]
 , "bugs":"http://jira.webinos.org/browse/WP"
 , "repositories": 
   [ { "type" : "git",

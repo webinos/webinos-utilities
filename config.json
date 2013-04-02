@@ -1,0 +1,25 @@
+{
+    "ports": {
+        "provider": 6080,
+        "provider_webServer": 6443,
+        "pzp_webSocket": 8080,
+        "pzp_tlsServer": 8040,
+        "pzp_zeroConf": 4321,
+        "iot": 3000
+    },
+    "certConfiguration": {
+        "country": "UK",
+        "state"  : "MX",
+        "city"   : "London",
+        "orgname": "Webinos",
+        "orgunit": "WP4",
+        "cn"     : "",
+        "email"  : "hello@webinos.org"
+    },
+    "friendlyName": "",
+    "webinos_version": {
+        "tag": "v0.8.0",
+        "num_commit": "134",
+        "commit_id": "gd62f210"
+    }
+}

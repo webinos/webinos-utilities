@@ -7,6 +7,7 @@ module.exports = {
     "webinosService"      : require("./lib/loadservice.js"),
     "webinosLogging"      : require("./lib/logging.js"),
     "webinosConfiguration": require("./lib/configuration.js"),
+    "webinosHelpers"      : require("./lib/helpers.js"),
     "webinosId"           : require("./lib/webinosId.js"),
     "webinosPath"         : require("./lib/webinosPath.js")
 };

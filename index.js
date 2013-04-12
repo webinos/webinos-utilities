@@ -9,5 +9,6 @@ module.exports = {
     "webinosConfiguration": require("./lib/configuration.js"),
     "webinosHelpers"      : require("./lib/helpers.js"),
     "webinosId"           : require("./lib/webinosId.js"),
-    "webinosPath"         : require("./lib/webinosPath.js")
+    "webinosPath"         : require("./lib/webinosPath.js"),
+    "loadConfig"          : require("./lib/loadconfig.js")
 };

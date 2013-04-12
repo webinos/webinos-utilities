@@ -8,7 +8,4 @@
       "url"  : "https://github.com/webinos/webinos-utilities.git"
     }
   ]
-, "dependencies":{
-    "find-dependencies": "~0.0.2"
-  }
 }

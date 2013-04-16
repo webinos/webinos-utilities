@@ -3,6 +3,9 @@
 , "version": "0.0.1"
 , "main": "index.js"
 , "bugs":"http://jira.webinos.org/browse/WP"
+, "dependencies":{
+    "schema": "*.*.*"
+}
 , "repositories": 
   [ { "type" : "git",
       "url"  : "https://github.com/webinos/webinos-utilities.git"

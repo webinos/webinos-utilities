@@ -6,6 +6,16 @@
 , "dependencies":{
     "schema": "0.x.x"
 }
+, "devDependencies": {
+    "jasmine-node" : "1.x.x"
+}
+, "engines": { 
+    "node": ">= 0.6.0"
+,   "npm": ">= 1.1.17"
+}
+, "scripts": {
+    "test": "jasmine-node ./test/jasmine"
+}
 , "repositories": 
   [ { "type" : "git",
       "url"  : "https://github.com/webinos/webinos-utilities.git"

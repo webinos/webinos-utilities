@@ -265,7 +265,8 @@ describe('Generic old message check', function() {
 describe ('Old prop message check', function () {
 
     // old prop message example
-    var prop_msg = {
+    var prop_msg = [];
+    prop_msg[0] = {
         type : 'prop',
         from : 'WebinosPzh/WebinosPzp',
         to : 'WebinosPzh',
@@ -274,9 +275,21 @@ describe ('Old prop message check', function () {
             message : 8040
         }
     };
+    prop_msg[1] = {
+        type : 'prop',
+        from : 'WebinosPzh/WebinosPzp',
+        to : 'WebinosPzh',
+        resp_to : 'WebinosPzh/WebinosPzp',
+        payload : {
+            status : 'pzpDetails',
+            message : 8040
+        }
+    };
 
     it ('Recognized old prop message', function () {
-        expect (validation.checkSchema(prop_msg)).toEqual(false);
+        for (i = 0; i < prop_msg.length; i++) {
+            expect (validation.checkSchema(prop_msg[i])).toEqual(false);
+        }
     });
 
     var wrong_prop_msg = {

@@ -1,6 +1,6 @@
 { "name": "webinos-utilities"
 , "description": "A set of utilities files used by webinos pzh and pzp"
-, "version": "0.0.1"
+, "version": "0.8.0"
 , "main": "index.js"
 , "bugs":"http://jira.webinos.org/browse/WP"
 , "dependencies":{

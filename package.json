@@ -4,7 +4,7 @@
 , "main": "index.js"
 , "bugs":"http://jira.webinos.org/browse/WP"
 , "dependencies":{
-    "schema": "0.x.x"
+    "JSV": "4.x.x"
 }
 , "devDependencies": {
     "jasmine-node" : "1.x.x"

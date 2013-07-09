@@ -22,9 +22,9 @@
         "num_commit": "134",
         "commit_id": "gd62f210"
     },
-    
-    "androidPath": {
-        "wrt": "/data/data/org.webinos.app/wrt",
-        "static": "/data/data/org.webinos.app/wrt/static"
+    "android": {
+        "webinos": "/data/data/org.webinos.android/webinos",
+        "wrt":     "/data/data/org.webinos.android/wrt",
+        "static":  "/data/data/org.webinos.android/wrt/static"
     }
 }

@@ -133,11 +133,11 @@
                 // params is the parameters needed by the API method.
                 success(params);
             };
-            
-            // Refer to the call in
-            // Webinos-Platform/webinos/core/api/servicedisco/lib/rpc_servicediso.js.
+
+            // denied by policy manager
             rpc.onSecurityError = function (params) {
-                if (typeof findOp !== 'undefined' && typeof callback.onError === 'function') {
+                clearTimeout(timer);
+                if (typeof callback.onError === 'function') {
                     callback.onError(new DOMError('SecurityError', ''));
                 }
             };

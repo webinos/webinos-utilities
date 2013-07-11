@@ -4,7 +4,8 @@
 , "main": "index.js"
 , "bugs":"http://jira.webinos.org/browse/WP"
 , "dependencies":{
-    "schema": "0.x.x"
+    "schema": "0.x.x",
+    "webinos-jsonrpc2":"*"
 }
 , "devDependencies": {
     "jasmine-node" : "1.x.x"

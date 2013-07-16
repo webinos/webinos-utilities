@@ -21,10 +21,5 @@
         "tag": "v0.8.0",
         "num_commit": "134",
         "commit_id": "gd62f210"
-    },
-    "android": {
-        "webinos": "/data/data/org.webinos.android/webinos",
-        "wrt":     "/data/data/org.webinos.android/wrt",
-        "static":  "/data/data/org.webinos.android/wrt/static"
     }
 }

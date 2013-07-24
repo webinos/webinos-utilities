@@ -10,5 +10,8 @@ module.exports = {
     "webinosHelpers"      : require("./lib/helpers.js"),
     "webinosId"           : require("./lib/webinosId.js"),
     "webinosPath"         : require("./lib/webinosPath.js"),
-    "loadConfig"          : require("./lib/loadconfig.js")
+    "loadConfig"          : require("./lib/loadconfig.js"),
+    "webinosSync"         : require("./lib/synchronization.js"),
+    "webinosServiceDisco" : require("./lib/rpc_servicedisco.js"),
+    "webinosMessaging"    : require("./lib/messagehandler.js")
 };

@@ -21,48 +21,9 @@
         return typeof module === "object" ? true : false;
     }
 
-    var allTypes = [
-        'http://webinos.org/api/actuators',
-        'http://webinos.org/api/app2app',
-        'http://webinos.org/api/applauncher',
-        'http://webinos.org/api/authentication',
-        'http://webinos.org/api/context',
-        'http://webinos.org/api/corePZinformation',
-        'http://webinos.org/api/deviceorientation',
-        'http://webinos.org/api/devicestatus',
-        'http://webinos.org/api/discovery',
-        'http://webinos.org/api/events',
-        'http://webinos.org/api/file',
-        'http://webinos.org/api/mediacontent',
-        'http://webinos.org/api/nfc',
-        'http://webinos.org/api/notifications',
-        'http://webinos.org/api/payment',
-        'http://webinos.org/api/sensors',
-        'http://webinos.org/api/test',
-        'http://webinos.org/api/tv',
-        'http://webinos.org/api/vehicle',
-        'http://webinos.org/api/w3c/geolocation',
-        'http://www.w3.org/ns/api-perms/geolocation',
-        'http://www.w3.org/ns/api-perms/contacts',
-        'http://webinos.org/api/media',
-        'http://webinos.org/api/internal/zonenotification',
-        'http://webinos.org/manager/discovery/bluetooth',
-        'http://webinos.org/mwc/oauth',
-        'http://webinos.org/core/policymanagement'
-    ];
-
     var typeMap = {};
 
     var registerServiceConstructor = function(serviceType, Constructor) {
-        var isValid = allTypes.reduce(function(prev, curr) {
-            if (prev) return prev;
-            return curr === serviceType;
-        }, false);
-
-        if (!isValid) {
-            console.log("discovery: serviceType not valid, didn't register constructor for", serviceType);
-            return;
-        }
         console.log("discovery: registered constructor for", serviceType);
         typeMap[serviceType] = Constructor;
     };
@@ -172,11 +133,11 @@
                 // params is the parameters needed by the API method.
                 success(params);
             };
-            
-            // Refer to the call in
-            // Webinos-Platform/webinos/core/api/servicedisco/lib/rpc_servicediso.js.
+
+            // denied by policy manager
             rpc.onSecurityError = function (params) {
-                if (typeof findOp !== 'undefined' && typeof callback.onError === 'function') {
+                clearTimeout(timer);
+                if (typeof callback.onError === 'function') {
                     callback.onError(new DOMError('SecurityError', ''));
                 }
             };

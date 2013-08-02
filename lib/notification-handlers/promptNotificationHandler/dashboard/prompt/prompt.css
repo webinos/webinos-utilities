@@ -1,0 +1,85 @@
+.prompt-content {
+    line-height: 1.5em;
+}
+
+.loading {
+    background: #fff url(img/loading.gif) 50% 50% no-repeat;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.permissionButton {
+	height: 3.7em;
+}
+
+.continueButton {
+	height: 1.7em;
+}
+
+.permissions-controls {
+	margin: 1em 0;
+	-webkit-box-shadow: 0px 0px 0px 1px #AAA;
+	box-shadow: 0px 0px 0px 1px #AAA;
+}
+.permissions-controls > div {
+	border: none;
+	border-right: 1px solid #CCC;
+	border-bottom: 1px solid #222;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	vertical-align: bottom;
+}
+/* 2 buttons */
+.permissions-controls.noOfButtons2 > div {
+	width: 50%;
+}
+/* 3 buttons */
+.permissions-controls.noOfButtons3 > div {
+	width: 33%;
+}
+.permissions-controls.noOfButtons3 > div + div {
+	width: 34%;
+}
+.permissions-controls.noOfButtons3 > div + div + div {
+	width: 33%;
+	border-right: none;
+}
+/* 4 buttons */
+.permissions-controls.noOfButtons4 > div {
+	width: 25%;
+}
+
+.permissions-controls.noOfButtons6 > div {
+	width: 16.66%;
+}
+
+.allow.selected {color: #fff; border-bottom: 4px solid #0f0; background: #111;}
+.allow {color: #040; background: #eee;}
+.prompt.selected {color: #fff; border-bottom: 4px solid #ff0; background: #111;}
+.prompt {color: #440; background: #eee;}
+.deny.selected {color: #fff; border-bottom: 4px solid #f00; background: #111;}
+.deny {color: #400; background: #eee;}
+
+.user-data {
+    min-height: 128px;
+}
+.user-data h1, .user-data h2 {
+    padding-left: 138px;
+}
+
+#newUserReqName {
+    font-size: 230%;
+}
+
+#newUserReqImg {
+    width: 128px;
+}
+
+.permissions-controls {
+    margin: 2em 0;
+}

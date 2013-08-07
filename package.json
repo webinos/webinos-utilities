@@ -6,7 +6,7 @@
 , "dependencies":{
     "schema": "0.x.x",
     "webinos-jsonrpc2":"*",
-    "node-uuid": "1.*.x",
+    "node-uuid": "1.x.x",
     "emailjs": "0.3.x"
 }
 , "devDependencies": {

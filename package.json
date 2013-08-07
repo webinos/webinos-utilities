@@ -5,11 +5,11 @@
 , "bugs":"http://jira.webinos.org/browse/WP"
 , "dependencies":{
     "schema": "0.x.x",
-    "webinos-jsonrpc2":"*"
+    "webinos-jsonrpc2":"*",
+    "node-uuid": "1.*.x",
+    "emailjs": "0.3.x"
 }
 , "devDependencies": {
-    "node-uuid": "1.*.x",
-    "emailjs": "0.3.x",
     "jasmine-node" : "1.x.x"
 }
 , "bundleDependencies":["webinos-api-test"]

@@ -13,6 +13,7 @@ module.exports = {
     "loadConfig"          : require("./lib/loadconfig.js"),
     "webinosSync"         : require("./lib/synchronization.js"),
     "webinosServiceDisco" : require("./lib/rpc_servicedisco.js"),
+    "webinosServiceConfig" : require("./lib/rpc_serviceconfig.js"),
     "webinosMessaging"    : require("./lib/messagehandler.js"),
     "webinosNotifications": require("./lib/notifications.js")
 };

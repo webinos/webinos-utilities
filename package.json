@@ -1,11 +1,13 @@
 { "name": "webinos-utilities"
 , "description": "A set of utilities files used by webinos pzh and pzp"
-, "version": "0.8.2"
+, "version": "0.8.3"
 , "main": "index.js"
 , "bugs":"http://jira.webinos.org/browse/WP"
 , "dependencies":{
     "schema": "0.x.x",
-    "webinos-jsonrpc2":"*"
+    "webinos-jsonrpc2":"*",
+    "node-uuid": "1.x.x",
+    "emailjs": "0.3.x"
 }
 , "devDependencies": {
     "jasmine-node" : "1.x.x"

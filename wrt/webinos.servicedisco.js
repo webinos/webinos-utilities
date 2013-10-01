@@ -126,7 +126,7 @@
 
                 // reduce feature uri to base form, e.g. http://webinos.org/api/sensors
                 // instead of http://webinos.org/api/sensors.light etc.
-                var stype = /(?:.*(?:\/[\w]+)+)/.exec(baseServiceObj.api);
+                var stype = /.+api\/(?:w3c\/)?[^\/\.]+/.exec(baseServiceObj.api);
                 stype = stype ? stype[0] : undefined;
 
                 var ServiceConstructor = typeMap[stype] || typeMapCompatible[stype];

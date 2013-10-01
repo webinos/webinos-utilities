@@ -16,7 +16,7 @@
  * Copyright 2012 - 2013 Samsung Electronics (UK) Ltd
  * Author: Habib Virji (habib.virji@samsung.com)
  *******************************************************************************/
-var sync_manager = require("../../index.js");
+var sync_manager = require("../../index.js").webinosSync;
 
 var pzh_crl = {
   value:"-----BEGIN X509 CRL-----\n-----END X509 CRL-----\n"
@@ -114,7 +114,7 @@ var pzp_userPref = {
  }
 };
 var pzp_sync, pzh_sync, pzhSyncItems, pzpObject;
-describe("Sync manager updates during PZP enrollment at PZH, also covers update from the PZH", function(){
+xdescribe("Sync manager updates during PZP enrollment at PZH, also covers update from the PZH", function(){
     var pzpObj, compItems;
     it ("PZP initial sync message when PZP enrolls", function() {
         sync_manager.parseXML(pzp_policy, function(policyJson) {
@@ -161,7 +161,7 @@ describe("Sync manager updates during PZP enrollment at PZH, also covers update 
     });
 });
 
-describe("PZP updates sync with PZH", function() {
+xdescribe("PZP updates sync with PZH", function() {
     it("PZP updates policy changes to the PZH" , function() {
         var diff = pzp_sync.compareObjectHash(pzh_sync.getObjectContents());// PZP find differences based on last sync message.
         expect(pzhSyncItems.policy).toEqual("");

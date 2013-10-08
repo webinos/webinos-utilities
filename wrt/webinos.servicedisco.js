@@ -54,7 +54,7 @@
                     , function (params) { errorCB(params); }
             );
         };
-        
+
         /**
          * Search for registered services.
          * @param {ServiceType} serviceType ServiceType object to search for.
@@ -94,10 +94,10 @@
             if (typeof oAuthModule !== 'undefined') typeMapCompatible['http://webinos.org/mwc/oauth'] = oAuthModule;
             if (typeof PolicyManagementModule !== 'undefined') typeMapCompatible['http://webinos.org/core/policymanagement'] = PolicyManagementModule;
 
-            
+
             var rpc = rpcHandler.createRPC('ServiceDiscovery', 'findServices',
                     [serviceType, options, filter]);
-            
+
             var timer = setTimeout(function () {
                 rpcHandler.unregisterCallbackObject(rpc);
                 // If no results return TimeoutError.
@@ -107,7 +107,7 @@
             }, options && typeof options.timeout !== 'undefined' ?
                         options.timeout : 120000 // default timeout 120 secs
             );
-            
+
             findOp = new PendingOperation(function() {
                 // remove waiting requests from callerCache
                 var index = callerCache.indexOf(rpc);
@@ -119,7 +119,7 @@
                     callback.onError(new DOMError('AbortError', ''));
                 }
             }, timer);
-            
+
             var success = function (params) {
                 console.log("servicedisco: service found.");
                 var baseServiceObj = params;
@@ -138,11 +138,11 @@
                 } else {
                     var serviceErrorMsg = 'Cannot instantiate webinos service.';
                     if (typeof callback.onError === 'function') {
-                        callback.onError(new DiscoveryError(102, serviceErrorMsg));
+                        callback.onError(new DOMError("onServiceAvailable", serviceErrorMsg));
                     }
                 }
             }; // End of function success
-            
+
             // The core of findService.
             rpc.onservicefound = function (params) {
                 // params is the parameters needed by the API method.
@@ -156,32 +156,39 @@
                     callback.onError(new DOMError('SecurityError', ''));
                 }
             };
-            
+
+            rpc.onError = function (params) {
+                var serviceErrorMsg = 'Cannot find webinos service.';
+                if (typeof callback.onError === 'function') {
+                    callback.onError(new DOMError('onError', serviceErrorMsg));
+                }
+            };
+
             // Add this pending operation.
             rpcHandler.registerCallbackObject(rpc);
-            
+
             if (typeof rpcHandler.parent !== 'undefined') {
                 rpc.serviceAddress = rpcHandler.parent.config.pzhId;
             } else {
                 rpc.serviceAddress = webinos.session.getServiceLocation();
             }
-            
+
             if (!isOnNode() && !_webinosReady) {
                 callerCache.push(rpc);
             } else {
                 // Only do it when _webinosReady is true.
                 rpcHandler.executeRPC(rpc);
             }
-            
+
             return findOp;
         };  // End of findServices.
-        
+
         if (isOnNode()) {
             return;
         }
-        
+
         // further code only runs in the browser
-        
+
         webinos.session.addListener('registeredBrowser', function () {
             _webinosReady = true;
             for (var i = 0; i < callerCache.length; i++) {
@@ -191,7 +198,7 @@
             callerCache = [];
         });
     };
-    
+
     /**
      * Export definitions for node.js
      */
@@ -201,19 +208,19 @@
         // this adds ServiceDiscovery to the window object in the browser
         window.ServiceDiscovery = ServiceDiscovery;
     }
-    
+
     /**
      * Interface PendingOperation
      */
     function PendingOperation(cancelFunc, timer) {
         this.found = false;
-        
+
         this.cancel = function () {
             clearTimeout(timer);
             cancelFunc();
         };
     }
-    
+
     function DOMError(name, message) {
         return {
             name: name,

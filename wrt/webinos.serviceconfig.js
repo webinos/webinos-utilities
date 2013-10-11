@@ -31,6 +31,21 @@
          * @param successCB Callback to call with results.
          * @param errorCB Callback to call in case of error.
          */
+        this.getAPIServicesConfiguration = function(apiName, successCB, errorCB) {
+            //Calls to this method can be constrained using dashboard's feature
+            var rpc = rpcHandler.createRPC('ServiceConfiguration', 'getAPIServicesConfiguration', [{'api':'http://webinos.org/api/dashboard'}, apiName]);
+            rpcHandler.executeRPC(rpc
+                    , function (params) { successCB(params); }
+                    , function (params) { errorCB(params); }
+            );
+        };
+ 
+        /**
+         * Get current configuration for a specified API.
+         * @param apiName Name of source API.
+         * @param successCB Callback to call with results.
+         * @param errorCB Callback to call in case of error.
+         */
         this.getServiceConfiguration = function(apiName, successCB, errorCB) {
             //Calls to this method can be constrained using dashboard's feature
             var rpc = rpcHandler.createRPC('ServiceConfiguration', 'getServiceConfiguration', [{'api':'http://webinos.org/api/dashboard'}, apiName]);
@@ -39,7 +54,23 @@
                     , function (params) { errorCB(params); }
             );
         };
-        
+      
+        /**
+         * Set configuration to a specified API.
+         * @param apiName Name of target API.
+         * @param config Configuration to apply. It updates the params field in the config.json file
+         * @param successCB Callback to call with results.
+         * @param errorCB Callback to call in case of error.
+         */
+        this.setAPIServicesConfiguration = function(apiName, config, successCB, errorCB) {
+            //Calls to this method can be constrained using dashboard's feature
+            var rpc = rpcHandler.createRPC('ServiceConfiguration', 'setAPIServicesConfiguration', [{'api':'http://webinos.org/api/dashboard'}, apiName, config]);
+            rpcHandler.executeRPC(rpc
+                    , function (params) { successCB(params); }
+                    , function (params) { errorCB(params); }
+            );
+        };
+
         /**
          * Set configuration to a specified API.
          * @param apiName Name of target API.

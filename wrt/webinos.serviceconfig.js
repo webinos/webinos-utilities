@@ -57,14 +57,14 @@
       
         /**
          * Set configuration to a specified API.
-         * @param apiName Name of target API.
+         * @param apiURI URI of target API.
          * @param config Configuration to apply. It updates the params field in the config.json file
          * @param successCB Callback to call with results.
          * @param errorCB Callback to call in case of error.
          */
-        this.setAPIServicesConfiguration = function(apiName, config, successCB, errorCB) {
+        this.setAPIServicesConfiguration = function(apiURI, config, successCB, errorCB) {
             //Calls to this method can be constrained using dashboard's feature
-            var rpc = rpcHandler.createRPC('ServiceConfiguration', 'setAPIServicesConfiguration', [{'api':'http://webinos.org/api/dashboard'}, apiName, config]);
+            var rpc = rpcHandler.createRPC('ServiceConfiguration', 'setAPIServicesConfiguration', [{'api':'http://webinos.org/api/dashboard'}, apiURI, config]);
             rpcHandler.executeRPC(rpc
                     , function (params) { successCB(params); }
                     , function (params) { errorCB(params); }
@@ -73,14 +73,15 @@
 
         /**
          * Set configuration to a specified API.
-         * @param apiName Name of target API.
+         * @param serviceID ID of target service.
+         * @param apiURI URI of service's type API.
          * @param config Configuration to apply. It updates the params field in the config.json file
          * @param successCB Callback to call with results.
          * @param errorCB Callback to call in case of error.
          */
-        this.setServiceConfiguration = function(apiName, config, successCB, errorCB) {
+        this.setServiceConfiguration = function(serviceID, apiURI, config, successCB, errorCB) {
             //Calls to this method can be constrained using dashboard's feature
-            var rpc = rpcHandler.createRPC('ServiceConfiguration', 'setServiceConfiguration', [{'api':'http://webinos.org/api/dashboard'}, apiName, config]);
+            var rpc = rpcHandler.createRPC('ServiceConfiguration', 'setServiceConfiguration', [{'api':'http://webinos.org/api/dashboard'}, serviceID, apiURI, config]);
             rpcHandler.executeRPC(rpc
                     , function (params) { successCB(params); }
                     , function (params) { errorCB(params); }

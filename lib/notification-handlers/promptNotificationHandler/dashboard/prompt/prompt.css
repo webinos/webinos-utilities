@@ -5,6 +5,7 @@
 .loading {
     background: #fff url(img/loading.gif) 50% 50% no-repeat;
     background-color: transparent;
+    padding: 10px;
     width: 100%;
     height: 100%;
 }
@@ -14,11 +15,11 @@
 }
 
 .permissionButton {
-	height: 3.7em;
+	height: 4em;
 }
 
 .continueButton {
-	height: 1.7em;
+    padding-bottom: 25px;
 }
 
 .permissions-controls {
@@ -72,14 +73,19 @@
     padding-left: 138px;
 }
 
-#newUserReqName {
-    font-size: 230%;
-}
-
-#newUserReqImg {
+.requestingUserImage {
     width: 128px;
+    float: left;
 }
 
 .permissions-controls {
     margin: 2em 0;
+}
+
+.requestingUserName {
+    font-weight: bold;
+}
+
+.requestedServiceAddress {
+    font-weight: bold;
 }

@@ -6,27 +6,34 @@
     <!--head-->
     <link rel="stylesheet" href="prompt/prompt.css">
     <script type="text/javascript" src="prompt/prompt.js"></script>
+    <script src="notifications/jquery-2.0.3.min.js"></script>
     <!--/head-->
 </head>
 <body id="user-permissions-page">
-    <!--<div class="title">REQUEST</div>-->
-    <!--<div class="subtitle">Permission</div>-->
 
     <!--content-->
-        <div id="user-permission-list-container" class="prompt-content">
-            <div id="user-permission-list-container-content" class="hidden">
+        <div id="promptContainer" class="prompt-content">
+            <div id="promptContainerContent" class="hidden">
                 <div class="user-data">
-                    <img src="prompt/img/userPlaceholder.png" id="newUserReqImg">
-                    <h1 id="newUserReqName">Name</h1>
-                    <h2>would like to access a service on your device</h2>
+                    <img src="prompt/img/userPlaceholder.png" class="requestingUserImage">
+                    <h1 class="requestingUserName">Name</h1>
+                    <br/>
+                    <h2>has requested access to</h2>
+                    <br/>
+                    <h2 class="requestedServiceAddress"></h2>
+                </div>
+                <div>
+                    <!--<p><span class="requestingUserName"></span> would like to access the <span class="requestedServiceAddress"></span> service on your device:</p>-->
+                    <!--<br />-->
+                    <p>If you click <b>allow</b>, <span class="requestingUserName"></span> will be able to access the service on your devices.</p>
+                    <br />
+                    <p>Click <b>deny</b> if you don't know who <span class="requestingUserName"></span>  is, or if you do not want him or her to access the service.</p>
                 </div>
 
                 <div class="permissions-controls" id="newUserReqButtons"></div>
-                <div class="button continueButton" id="newUserReqContinue">Continue</div>
-                <div class="info" id="newUserReqInfo">
-                    <p>If you click <b>allow</b>, <span id="newUserReqNameInfo1">*Name*</span> will be able to *access* the service on your devices.</p>
-                    <p>Click <b>deny</b> if you don't know who <span id="newUserReqNameInfo2">*Name*</span> is, or if you do not want him or her to access the service.</p>
-                </div>
+
+
+                <div class="button continueButton" id="promptContinueButton">Save this decision and continue</div>
             </div>
             <div id="loading" class="loading">&nbsp;</div>
         </div>

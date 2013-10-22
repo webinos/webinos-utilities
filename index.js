@@ -15,5 +15,6 @@ module.exports = {
     "webinosServiceDisco" : require("./lib/rpc_servicedisco.js"),
     "webinosServiceConfig" : require("./lib/rpc_serviceconfig.js"),
     "webinosMessaging"    : require("./lib/messagehandler.js"),
-    "webinosNotifications": require("./lib/notifications.js")
+    "webinosNotifications": require("./lib/notifications.js"),
+    "webinosActions"      : require("./lib/actions.js")
 };

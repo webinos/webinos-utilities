@@ -139,4 +139,11 @@ describe ("test readJson", function () {
             done();
         });
     });
+
+    it("must throw exception if instance is not a string", function() {
+        var dummy = function() {
+            session_common.readJson(new Object(), new Buffer(0, 'utf8'), function() {});
+        };
+        expect(dummy).toThrow();
+    });
 });

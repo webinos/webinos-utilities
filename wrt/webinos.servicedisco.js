@@ -117,6 +117,8 @@
                 rpcHandler.unregisterCallbackObject(rpc);
                 if (typeof callback.onError === 'function') {
                     callback.onError(new DOMError('AbortError', ''));
+                    clearTimeout(timer);
+                    timer = null;
                 }
             }, timer);
 
@@ -154,6 +156,7 @@
                 clearTimeout(timer);
                 if (typeof callback.onError === 'function') {
                     callback.onError(new DOMError('SecurityError', ''));
+                    clearTimeout(timer);
                 }
             };
 
@@ -161,6 +164,7 @@
                 var serviceErrorMsg = 'Cannot find webinos service.';
                 if (typeof callback.onError === 'function') {
                     callback.onError(new DOMError('onError', serviceErrorMsg));
+                    clearTimeout(timer);
                 }
             };
 

@@ -42,13 +42,13 @@
 
         /**
          * Search for installed APIs.
-         * @param APINameFilter String to filter API names.
+         * @param apiNameFilter String to filter API names.
          * @param successCB Callback to call with results.
          * @param errorCB Callback to call in case of error.
          */
-        this.findConfigurableAPIs = function(APINameFilter, successCB, errorCB) {
+        this.findConfigurableAPIs = function(apiNameFilter, successCB, errorCB) {
             //Calls to this method can be constrained using dashboard's feature
-            var rpc = rpcHandler.createRPC('ServiceDiscovery', 'findConfigurableAPIs', [{'api':'http://webinos.org/api/dashboard'}, APINameFilter]);
+            var rpc = rpcHandler.createRPC('ServiceDiscovery', 'findConfigurableAPIs', [{'api':'http://webinos.org/api/dashboard'}, apiNameFilter]);
             rpcHandler.executeRPC(rpc
                     , function (params) { successCB(params); }
                     , function (params) { errorCB(params); }

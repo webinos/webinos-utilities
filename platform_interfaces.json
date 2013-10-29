@@ -1,7 +1,7 @@
 {
   "android": {
     "webinos": "/data/data/org.webinos.android/webinos",
-    "wrt": "/data/data/org.webinos.android/wrt",
+    "wrt_home": "/data/data/org.webinos.android/wrt",
     "static": "/data/data/org.webinos.android/wrt/static",
     "DevicestatusImpl": "org.webinos.android.impl.DevicestatusImpl"
   }

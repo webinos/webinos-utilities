@@ -30,6 +30,11 @@
 			return this._testAttr + " Success";
 		});
 	};
+	// Inherit all functions from WebinosService
+	ZoneNotificationsModule.prototype = Object.create(WebinosService.prototype);
+	// The following allows the 'instanceof' to work properly
+	ZoneNotificationsModule.prototype.constructor = ZoneNotificationsModule;
+	// Register to the service discovery
 	_webinos.registerServiceConstructor("http://webinos.org/api/zonenotifications", ZoneNotificationsModule);
 	
 	/**

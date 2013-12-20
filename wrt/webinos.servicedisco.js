@@ -24,7 +24,6 @@
     var typeMap = {};
 
     var registerServiceConstructor = function(serviceType, Constructor) {
-        console.log("discovery: registered constructor for", serviceType);
         typeMap[serviceType] = Constructor;
     };
     if (typeof _webinos !== 'undefined') _webinos.registerServiceConstructor = registerServiceConstructor;
@@ -124,7 +123,6 @@
             }, timer);
 
             var success = function (params) {
-                console.log("servicedisco: service found.");
                 var baseServiceObj = params;
 
                 // reduce feature uri to base form, e.g. http://webinos.org/api/sensors
@@ -139,7 +137,7 @@
                     findOp.found = true;
                     callback.onFound(service);
                 } else {
-                    var serviceErrorMsg = 'Cannot instantiate webinos service.';
+                    var serviceErrorMsg = 'Cannot instantiate webinos service: ' + stype;
                     if (typeof callback.onError === 'function') {
                         callback.onError(new DOMError("onServiceAvailable", serviceErrorMsg));
                     }
